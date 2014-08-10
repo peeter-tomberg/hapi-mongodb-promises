@@ -77,7 +77,7 @@ describe('Mongo plugin', function() {
 
             var functionNames = ['find', 'findOne', 'findOneById', 'insert', 'insertOne', 'update'];
             functionNames.forEach(function (name) {
-                expect(server.plugins['mongo'][name]).to.be.a(Function);
+                expect(server.plugins['hapi-mongodb-promises'][name]).to.be.a(Function);
             });
 
             done();

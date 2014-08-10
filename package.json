@@ -28,8 +28,7 @@
     "config": {
         "blanket": {
             "pattern": [
-                "src/",
-                "hapi-mongodb-promises/index.js"
+                "src/"
             ]
         }
     }
