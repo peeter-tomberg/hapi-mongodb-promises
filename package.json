@@ -1,0 +1,36 @@
+{
+    "name": "hapi-mongodb-promises",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "Peeter Tomberg peeter.tomberg@gmail.comg",
+    "license": "ISC",
+    "dependencies": {
+        "joi": "^4.6.2",
+        "mongodb": "^1.4.8",
+        "when": "^3.4.3"
+    },
+    "devDependencies": {
+        "blanket": "^1.1.6",
+        "coveralls": "^2.10.0",
+        "mocha": "~1.19.0",
+        "mocha-lcov-reporter": "0.0.1",
+        "must": "~0.11.0",
+        "sinon": "~1.10.0",
+        "hapi": ">= 6.x"
+    },
+    "scripts": {
+        "test": "mocha  ",
+        "testw": "mocha --watch",
+        "coverage": "mocha --reporter html-cov > coverage.html",
+        "coveralls": "mocha --reporter mocha-lcov-reporter | coveralls"
+    },
+    "config": {
+        "blanket": {
+            "pattern": [
+                "src/",
+                "hapi-mongodb-promises/index.js"
+            ]
+        }
+    }
+}

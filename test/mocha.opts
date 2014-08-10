@@ -1,0 +1,4 @@
+--require blanket
+--require must
+--recursive
+--reporter spec
