@@ -29,7 +29,8 @@
         "blanket": {
             "pattern": [
                 "src/"
-            ]
+            ],
+            "data-cover-never" : ["node_modules"]
         }
     }
 }
