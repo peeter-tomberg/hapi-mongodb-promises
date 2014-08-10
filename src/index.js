@@ -14,6 +14,7 @@ exports.register = function (plugin, options, next) {
     }
 
     MongoClient.connect(options.url, options.options || {}, function (error, db) {
+
         if (error) {
             next(error);
             return;
@@ -27,6 +28,7 @@ exports.register = function (plugin, options, next) {
         plugin.expose('insert', mongoWrapper.insert.bind(mongoWrapper));
         plugin.expose('insertOne', mongoWrapper.insertOne.bind(mongoWrapper));
         plugin.expose('update', mongoWrapper.update.bind(mongoWrapper));
+        plugin.expose('db', db);
 
         next();
     });

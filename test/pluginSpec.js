@@ -54,7 +54,7 @@ describe('Mongo plugin', function() {
         });
     });
 
-    it('should register with just an url url', function(done) {
+    it('should register with just an url', function(done) {
         server.pack.register({
             plugin: plugin,
             options : {
@@ -66,7 +66,7 @@ describe('Mongo plugin', function() {
         });
     });
 
-    it ('should expose functions', function (done) {
+    it ('should expose functions and the db object', function (done) {
 
         server.pack.register({
             plugin: plugin,
@@ -79,6 +79,8 @@ describe('Mongo plugin', function() {
             functionNames.forEach(function (name) {
                 expect(server.plugins['hapi-mongodb-promises'][name]).to.be.a(Function);
             });
+
+            expect(server.plugins['hapi-mongodb-promises'].db).to.exist();
 
             done();
         });

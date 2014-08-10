@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "description": "",
     "main": "index.js",
-    "author": "Peeter Tomberg peeter.tomberg@gmail.comg",
+    "author": "Peeter Tomberg peeter.tomberg@gmail.com",
     "license": "ISC",
     "dependencies": {
         "joi": "^4.6.2",
@@ -20,7 +20,7 @@
         "hapi": ">= 6.x"
     },
     "scripts": {
-        "test": "mocha  ",
+        "test": "mocha",
         "testw": "mocha --watch",
         "coverage": "mocha --reporter html-cov > coverage.html",
         "coveralls": "mocha --reporter mocha-lcov-reporter | coveralls"
