@@ -1,6 +1,6 @@
 {
     "name": "hapi-mongodb-promises",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "",
     "main": "index.js",
     "author": "Peeter Tomberg peeter.tomberg@gmail.com",
