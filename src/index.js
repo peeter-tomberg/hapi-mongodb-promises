@@ -6,14 +6,14 @@ exports.register = function (plugin, options, next) {
 
     var schema = Joi.object({
         'url' : Joi.string().required(),
-        'options' : Joi.object()
+        'settings' : Joi.object()
     });
     var validation = Joi.validate(options, schema);
     if (validation.error) {
         return next(validation.error);
     }
 
-    MongoClient.connect(options.url, options.options || {}, function (error, db) {
+    MongoClient.connect(options.url, options.settings || {}, function (error, db) {
 
         if (error) {
             next(error);
