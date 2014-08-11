@@ -28,6 +28,7 @@ exports.register = function (plugin, options, next) {
         plugin.expose('insert', mongoWrapper.insert.bind(mongoWrapper));
         plugin.expose('insertOne', mongoWrapper.insertOne.bind(mongoWrapper));
         plugin.expose('update', mongoWrapper.update.bind(mongoWrapper));
+        plugin.expose('remove', mongoWrapper.remove.bind(mongoWrapper));
         plugin.expose('db', db);
 
         next();

@@ -191,4 +191,32 @@ describe('Mongo wrapper', function () {
 
     });
 
+    it('must proxy remove requests to the mongo driver', function (done) {
+
+        var user = { 1 : 1, title : "title"};
+        var successItem = [{ id : 1, title : "title" }];
+        var errorError = new Error('error');
+
+        var successCallback = sinon.spy();
+        var errorCallback = sinon.spy();
+
+        var dbSuccessApi = createApi('remove', 'success', successItem);
+        var dbErrorApi = createApi('remove', 'error', errorError);
+
+        mongo = new Mongo(dbSuccessApi);
+        mongo.remove('user', user).then(successCallback).otherwise(errorCallback);
+
+        mongo = new Mongo(dbErrorApi);
+        mongo.remove('user', user).then(successCallback).otherwise(errorCallback);
+
+
+        setTimeout(function () {
+            expect(successCallback.calledOnce).to.be.true();
+            expect(errorCallback.calledOnce).to.be.true();
+
+            done();
+        }, 1);
+    });
+
+
 });

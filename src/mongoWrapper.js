@@ -91,4 +91,16 @@ Mongo.prototype.update = function (collection, query, update, options) {
     return deferred.promise;
 };
 
+/**
+ * Removes a document from a collection based on a query
+ * @param collection
+ * @param query
+ * @returns {promise|Promise|when.promise|Deferred.promise}
+ */
+Mongo.prototype.remove = function (collection, query) {
+    var deferred = when.defer();
+    this.mongo.collection(collection).remove(query, nodefn.createCallback(deferred.resolver));
+    return deferred.promise;
+};
+
 module.exports = Mongo;

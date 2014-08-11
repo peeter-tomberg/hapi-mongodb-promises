@@ -1,10 +1,11 @@
+# Hapi-MongoDB-promises
+
+---------------------
+
 [ ![Codeship Status for peeter-tomberg/hapi-mongodb-promises](https://codeship.io/projects/6d63ee10-02c1-0132-49a3-5eecd43daaed/status?branch=master)](https://codeship.io/projects/30317)
 [![Coverage Status](https://coveralls.io/repos/peeter-tomberg/hapi-mongodb-promises/badge.png)](https://coveralls.io/r/peeter-tomberg/hapi-mongodb-promises)
 [![Code Climate](https://codeclimate.com/github/peeter-tomberg/hapi-mongodb-promises/badges/gpa.svg)](https://codeclimate.com/github/peeter-tomberg/hapi-mongodb-promises)
 
-# Hapi-MongoDB-promises
-
----------------------
 
 This is a mongo db connection plugin and a promise wrapper for the mongo API. It enables your Hapi application to connect to mongodb and run queries. 
 
@@ -23,6 +24,7 @@ Several functions are exposed by this plugin :
 - `insert(collection, document)` : Returns a promise that resolves with the array of items added.
 - `insertOne(collection, document)` : Returns a promise that resolves with the first item added.
 - `update(collection, query, update, options)` - Returns a promise that resolves with the result of the query
+- `remove(collection, query)` - Returns a promise that resolves with the result of the query
 
 This plugin also exposes some objects :
 
