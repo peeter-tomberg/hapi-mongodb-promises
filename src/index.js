@@ -1,4 +1,7 @@
-var MongoClient = require('mongodb').MongoClient;
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+var ObjectID = mongodb.ObjectID;
+
 var MongoWrapper = require('./mongoWrapper');
 var Joi = require('joi');
 
@@ -29,7 +32,9 @@ exports.register = function (plugin, options, next) {
         plugin.expose('insertOne', mongoWrapper.insertOne.bind(mongoWrapper));
         plugin.expose('update', mongoWrapper.update.bind(mongoWrapper));
         plugin.expose('remove', mongoWrapper.remove.bind(mongoWrapper));
+
         plugin.expose('db', db);
+        plugin.expose('ObjectID', ObjectID);
 
         next();
     });

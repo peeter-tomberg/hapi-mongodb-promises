@@ -66,7 +66,7 @@ describe('Mongo plugin', function() {
         });
     });
 
-    it ('should expose functions and the db object', function (done) {
+    it ('should expose functions and the db & ObjectID objects', function (done) {
 
         server.pack.register({
             plugin: plugin,
@@ -81,6 +81,7 @@ describe('Mongo plugin', function() {
             });
 
             expect(server.plugins['hapi-mongodb-promises'].db).to.exist();
+            expect(server.plugins['hapi-mongodb-promises'].ObjectID).to.exist();
 
             done();
         });
