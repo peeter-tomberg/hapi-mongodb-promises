@@ -1,8 +1,6 @@
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
-var ObjectID = mongodb.ObjectID;
-
+var MongoClient = require('mongodb').MongoClient;
 var MongoWrapper = require('./mongoWrapper');
+var ObjectId = require('mongodb').ObjectID;
 var Joi = require('joi');
 
 exports.register = function (plugin, options, next) {
@@ -32,9 +30,8 @@ exports.register = function (plugin, options, next) {
         plugin.expose('insertOne', mongoWrapper.insertOne.bind(mongoWrapper));
         plugin.expose('update', mongoWrapper.update.bind(mongoWrapper));
         plugin.expose('remove', mongoWrapper.remove.bind(mongoWrapper));
-
+        plugin.expose('ObjectID', ObjectId);
         plugin.expose('db', db);
-        plugin.expose('ObjectID', ObjectID);
 
         next();
     });
